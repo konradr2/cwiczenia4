@@ -20,7 +20,15 @@ public class StudentGroup {
         students.remove(student);
     }
 
-    public void printGroupDetails() {
-        System.out.println("Studenci: ");
+    public double averageGroupGrade(){
+        if (students.isEmpty()){
+            return 0;
+        }
+        double sum = 0;
+        for (Student student : students){
+            sum += student.averageGrade();
+        }
+        return sum / students.size();
     }
+
 }

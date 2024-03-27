@@ -15,10 +15,22 @@ public class Student{
         this.indexNumber = indexNumber;
         this.email = email;
         this.address = address;
+        this.grades = new ArrayList<>();
 
     }
 
-    public static void add(Student students) {
+    public void addGrade(int grade) {
+        grades.add(grade);
+    }
+    public double averageGrade(){
+        if (grades.isEmpty()){
+            return 0;
+        }
+        double sum = 0;
+        for (int grade : grades){
+            sum += grade;
+        }
+        return sum / grades.size();
     }
 
     public void printStudentDetails() {
